@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prema Lekha</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
+
+    :root {
+      --bg-gradient: linear-gradient(to right, #ff9a9e, #fad0c4);
+      --accent-color: #ff4e50;
+      --text-color: #4b1e1e;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background: #fff8f8;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 0;
+      color: var(--accent-color);
+    }
+
+    .container h2 {
+      text-align: center;
+      font-weight: 400;
+      margin-top: 5px;
+    }
+
+    .letter {
+      margin-top: 30px;
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 10px;
+      line-height: 1.8;
+      background: #fff;
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    button {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #c23636;
+    }
+
+    .response {
+      text-align: center;
+      margin-top: 25px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .heart-bg, .heart-box {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .heart {
+      width: 20px;
+      height: 18px;
+      background: var(--accent-color);
+      position: absolute;
+      transform: rotate(-45deg);
+      animation: float 8s linear infinite;
+    }
+
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 18px;
+      background: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(-45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="heart-bg" id="heartBackground"></div>
+
+<div class="container">
+  <h1>Prema Lekha</h1>
+  <h2>To my one and only Ammulu 💖</h2>
+
+  <div class="letter" id="letter">
+    <p>Prema ani pilavadaniki oka peru vuntundi, kani nenu pilavadaniki nee peru vadutunna. Navvutho, palukutho, prathi nimisham nannu alarinche ammulu, na hrudayam lo okka swaramga nilichipoyav.</p>
+    <p>Nee choopulu naa oopirilo undi, nee navvu naa kalalo undi. Ee prema, okka swapnam kaadu - idhi oka pranam. Naatho undali ani anukuntunna, chitti chitti kalalu kuda nuvvu naatho panchukovali ani korukuntunna.</p>
+    <p>Nuvvu cheppina prathi maataki artham lekapovachu, kani nee silence ki kuda artham theliyadam modhalu ayindi. Nee kosam ee lekha rasanappudu, prathi aksharam na hrudayam nunchi vachindi.</p>
+    <p>Nuvvu oppukunte, naa jeevitham lo prathi roju prema panduga. Cheppamma, nuvvu naa jeevitham lo premanu swikaristava? Naa hrudayam nee oopirilo kalipestava?</p>
+    <p>I love you more than every heartbeat I've ever felt and every breath I’ll ever take.</p>
+    <p>Prema tho,
+    <br />Preetham 💌</p>
+  </div>
+
+  <div class="buttons">
+    <button onclick="respond(true)">Yes 💘</button>
+    <button onclick="respond(false)">No 💔</button>
+  </div>
+
+  <div class="response" id="response"></div>
+
+  <audio id="romanticAudio" src="https://cdn.pixabay.com/download/audio/2021/10/19/audio_3beccf5f4c.mp3?filename=romantic-piano-6396.mp3" preload="auto"></audio>
+  <audio id="sadAudio" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_2e8a3452f7.mp3?filename=slow-piano-12652.mp3" preload="auto"></audio>
+</div>
+
+<script>
+  const bg = document.getElementById('heartBackground');
+
+  function spawnHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.top = window.innerHeight + 'px';
+    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    heart.style.opacity = Math.random() * 0.5 + 0.5;
+    bg.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }
+
+  setInterval(spawnHeart, 300);
+
+  const romanticAudio = document.getElementById('romanticAudio');
+  const sadAudio = document.getElementById('sadAudio');
+
+  function respond(yes) {
+    const res = document.getElementById('response');
+    if (yes) {
+      res.textContent = "You said YES! 💖 Our love story begins now, Ammulu.";
+      romanticAudio.play();
+      sadAudio.pause();
+    } else {
+      res.textContent = "You said NO 💔 But my heart will still beat for you, silently...";
+      sadAudio.play();
+      romanticAudio.pause();
+    }
+  }
+</script>
+
+</body>
+</html>
