@@ -3,201 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prema Lekha</title>
+  <title>Prema Lekha 💌</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap');
-
-    :root {
-      --bg-gradient: linear-gradient(to right, #ff9a9e, #fad0c4);
-      --accent-color: #ff4e50;
-      --text-color: #4b1e1e;
-    }
-
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      overflow-x: hidden;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: auto;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 60px auto;
-      background: #fff8f8;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .container h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 0;
-      color: var(--accent-color);
-    }
-
-    .container h2 {
-      text-align: center;
-      font-weight: 400;
-      margin-top: 5px;
-    }
-
-    .letter {
-      margin-top: 30px;
-      max-height: 400px;
-      overflow-y: auto;
-      padding-right: 10px;
-      line-height: 1.8;
-      background: #fff;
-      border-left: 5px solid var(--accent-color);
-      padding: 20px;
-      font-size: 1.1rem;
-      position: relative;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    button {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: #c23636;
-    }
-
-    .response {
-      text-align: center;
-      margin-top: 25px;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .heart-bg, .heart-box {
+    .hearts {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
     }
-
     .heart {
-      width: 20px;
-      height: 18px;
-      background: var(--accent-color);
       position: absolute;
-      transform: rotate(-45deg);
+      color: #ff5ca2;
       animation: float 8s linear infinite;
     }
-
-    .heart::before, .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 18px;
-      background: var(--accent-color);
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: 10px;
-      top: 0;
-    }
-
     @keyframes float {
       0% {
-        transform: translateY(0) rotate(-45deg);
-        opacity: 0.9;
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
       }
       100% {
-        transform: translateY(-120vh) rotate(-45deg);
+        transform: translateY(-10vh) scale(1.5);
         opacity: 0;
       }
+    }
+    .container {
+      z-index: 1;
+      position: relative;
+      padding: 40px;
+      max-width: 800px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      overflow-y: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+      white-space: pre-wrap;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .buttons button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .buttons button:hover {
+      background-color: #c2185b;
     }
   </style>
 </head>
 <body>
-
-<div class="heart-bg" id="heartBackground"></div>
-
-<div class="container">
-  <h1>Prema Lekha</h1>
-  <h2>To my one and only Ammulu 💖</h2>
-
-  <div class="letter" id="letter">
-    <p>Prema ani pilavadaniki oka peru vuntundi, kani nenu pilavadaniki nee peru vadutunna. Navvutho, palukutho, prathi nimisham nannu alarinche ammulu, na hrudayam lo okka swaramga nilichipoyav.</p>
-    <p>Nee choopulu naa oopirilo undi, nee navvu naa kalalo undi. Ee prema, okka swapnam kaadu - idhi oka pranam. Naatho undali ani anukuntunna, chitti chitti kalalu kuda nuvvu naatho panchukovali ani korukuntunna.</p>
-    <p>Nuvvu cheppina prathi maataki artham lekapovachu, kani nee silence ki kuda artham theliyadam modhalu ayindi. Nee kosam ee lekha rasanappudu, prathi aksharam na hrudayam nunchi vachindi.</p>
-    <p>Nuvvu oppukunte, naa jeevitham lo prathi roju prema panduga. Cheppamma, nuvvu naa jeevitham lo premanu swikaristava? Naa hrudayam nee oopirilo kalipestava?</p>
-    <p>I love you more than every heartbeat I've ever felt and every breath I’ll ever take.</p>
-    <p>Prema tho,
-    <br />Preetham 💌</p>
+  <div class="hearts" id="hearts"></div>
+  <div class="container">
+    <h1>💌 Prema Lekha</h1>
+    <p>
+      snehitha snehitha snehitha ooo snehitha
+      Ninnu choodinappati nunchi naa manasu nee pere palukuthunnadhi adhi nee thappa naa thappa ani teliyadam ledhu naaku. Nee vaipu choosthe chaalu nee andhamayna kallatho badinchesthav emi sankellu vesi?
+      Nuvvu roju ala andham ga navvuthu nee valalao padesukuntunnav jagratha mari padipothanemo, padipothe mathram adhi nee thappe mari.
+      Naaku nuvvu prema kaadhu, nuvve prema. Naa choopulalo naa oopurilo naa repati kalalo lo kooda antha nuvve untunnav. Nidhrapoyetappudu ninne choosthu padukuntunna roju..ela ani sandeha paduthunnava adhe chandamama ni choosthu padukuntunna. Nee raakatho naa jeevitham lo nedu repu ellundu motham nuvve aypoyav alane maa inti gadapathokki velugulani testhav nee navvutho tho mana intlo inka naa jeevitham lo anukuntunna,idhi mathram em sandeham ledhu tecchesthav nuvvu naaku telusu.
+      Naa prema ni eppudu accept chesthunnav, nenu ekanga neetho pelli mandapam lo thaali kaduthu mana pillalatho oka chinni kutumbam ni oohinchesukuntunna...naa gurinchi cheptha vinu nenu chaala manchodini, bad habits em lev, future planning antava business cheddham anukuntunna ninnu pelli chesukoni neetho sarasalu aaduthu mana buddodi muddi kaduguthu kooda oohinchesukunna okok wait future planning lo extreme ki vellipoya next nee gurinchi naaku em telusu antava nee andham tho kattesukunnav mundhu tarvatha nee navvu tho aakattukunnav inka getti mudi vesesav inka nee care choosaka nuvve naa pellam ank fix aypoya mari nannu nee mogudiga accept chesthava.
+      I love you so much as deep as the pacific ocean.
+      Ninnu puvvullo pettukoni choosukunta ey kastam raakunda choosukunta ani kaburlu cheppanu. Kottukundham, godavapadadham aypoyaka avi inka ekkuvaga preminchukundham kudirithe konni maatalu ledha musugulo dhoori muddhulu. Ups and downs common evari life lo ayna entha down lo unna odhileyanu, entha paiki vellina life lo neethone veltha odhileyanu nee chitikina velu mathram, okkasari nenu naadhi naa vallu ani commit aythe odhileyanu eppatiki. Nuvvu premani isthe adhi rettimpu chesi istha, koppani isthe adhi premaga marchi muddhuga tirigi istha, alaka choopisthe muddhu aadi naa vodilo padukopettukunta. Mari naatho paatu naa venta vasthava naatho yedu adugulu vesthava adhe...naa premanu angeekaristhava, so ninnu naa pellam/emey/oi/osey/ammulu..inka chaala vidhaluga prema ga piliche chanuvuni isthava mari...
+      Prema ga rasthunna lekha naa oopirini icchina snehitha ku
+      Preetham.V
+      Taruvatha nuvvu edhi anukunte adhi.
+    </p>
+    <div class="buttons">
+      <button onclick="playYesMusic()">Yes 💖</button>
+      <button onclick="playNoMusic()">No 😢</button>
+    </div>
   </div>
 
-  <div class="buttons">
-    <button onclick="respond(true)">Yes 💘</button>
-    <button onclick="respond(false)">No 💔</button>
-  </div>
+  <audio id="yesMusic" src="yes-romantic.mp3"></audio>
+  <audio id="noMusic" src="yes yes-sad.mp3"></audio>
 
-  <div class="response" id="response"></div>
-
-  <audio id="romanticAudio" src="https://cdn.pixabay.com/download/audio/2021/10/19/audio_3beccf5f4c.mp3?filename=romantic-piano-6396.mp3" preload="auto"></audio>
-  <audio id="sadAudio" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_2e8a3452f7.mp3?filename=slow-piano-12652.mp3" preload="auto"></audio>
-</div>
-
-<script>
-  const bg = document.getElementById('heartBackground');
-
-  function spawnHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * window.innerWidth + 'px';
-    heart.style.top = window.innerHeight + 'px';
-    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
-    heart.style.opacity = Math.random() * 0.5 + 0.5;
-    bg.appendChild(heart);
-    setTimeout(() => heart.remove(), 10000);
-  }
-
-  setInterval(spawnHeart, 300);
-
-  const romanticAudio = document.getElementById('romanticAudio');
-  const sadAudio = document.getElementById('sadAudio');
-
-  function respond(yes) {
-    const res = document.getElementById('response');
-    if (yes) {
-      res.textContent = "You said YES! 💖 Our love story begins now, Ammulu.";
-      romanticAudio.play();
-      sadAudio.pause();
-    } else {
-      res.textContent = "You said NO 💔 But my heart will still beat for you, silently...";
-      sadAudio.play();
-      romanticAudio.pause();
+  <script>
+    function playYesMusic() {
+      document.getElementById('yesMusic').play();
+      alert('I Love You So Much Ammulu...lets start our roller coaster journey which never ends❤️');
     }
-  }
-</script>
+    function playNoMusic() {
+      document.getElementById('noMusic').play();
+      alert('I love you double thrible.......∞ 💔');
+    }
 
+    // Heart animation
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+      heart.innerHTML = '❤️';
+      document.getElementById('hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 300);
+  </script>
 </body>
 </html>
+
