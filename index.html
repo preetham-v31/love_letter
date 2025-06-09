@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prema Lekha 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffd1dc, #ffe4e1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-y: scroll;
+      color: #333;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px; height: 20px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/3/33/Red_heart_icon.svg') no-repeat center/contain;
+      animation: floatHearts 8s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      max-width: 850px;
+      margin: 80px auto;
+      background: #fffafc;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff1493;
+      font-size: 2.7rem;
+      margin-bottom: 30px;
+    }
+
+    .letter {
+      white-space: pre-wrap;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: #fff0f5;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #ffc0cb;
+    }
+
+    .buttons {
+      text-align: center;
+    }
+
+    button {
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      background: #ff69b4;
+      color: white;
+    }
+
+    button:hover {
+      background: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="container">
+    <h1>💌 Prema Lekha</h1>
+    <div class="letter" id="letter">
+snehitha snehitha snehitha ooo snehitha 
+Ninnu choodinappati nunchi naa manasu nee pere palukuthunnadhi adhi nee thappa naa thappa ani teliyadam ledhu naaku. Nee vaipu choosthe chaalu nee andhamayna kallatho badinchesthav emi sankellu vesi?
+Nuvvu roju ala andham ga navvuthu nee valalao padesukuntunnav jagratha mari padipothanemo, padipothe mathram adhi nee thappe mari.
+Naaku nuvvu prema kaadhu, nuvve prema. Naa choopulalo naa oopurilo naa repati kalalo lo kooda antha nuvve untunnav. Nidhrapoyetappudu ninne choosthu padukuntunna roju..ela ani sandeha paduthunnava adhe chandamama ni choosthu padukuntunna. Nee raakatho naa jeevitham lo nedu repu ellundu motham nuvve aypoyav alane maa inti gadapathokki velugulani testhav nee navvutho tho mana intlo inka naa jeevitham lo anukuntunna,idhi mathram em sandeham ledhu tecchesthav nuvvu naaku telusu.
+Naa prema ni eppudu accept chesthunnav, nenu ekanga neetho pelli mandapam lo thaali kaduthu mana pillalatho oka chinni kutumbam ni oohinchesukuntunna...naa gurinchi cheptha vinu nenu chaala manchodini, bad habits em lev, future planning antava business cheddham anukuntunna ninnu pelli chesukoni neetho sarasalu aaduthu mana buddodi muddi kaduguthu kooda oohinchesukunna okok wait future planning lo extreme ki vellipoya next nee gurinchi naaku em telusu antava nee andham tho kattesukunnav mundhu tarvatha nee navvu tho aakattukunnav inka getti mudi vesesav inka nee care choosaka nuvve naa pellam ank fix aypoya mari nannu nee mogudiga accept chesthava.
+I love you so much as deep as the pacific ocean.
+Ninnu puvvullo pettukoni choosukunta ey kastam raakunda choosukunta ani kaburlu cheppanu. Kottukundham, godavapadadham aypoyaka avi inka ekkuvaga preminchukundham kudirithe konni maatalu ledha musugulo dhoori muddhulu. Ups and downs common evari life lo ayna entha down lo unna odhileyanu, entha paiki vellina life lo neethone veltha odhileyanu nee chitikina velu mathram, okkasari nenu naadhi naa vallu ani commit aythe odhileyanu eppatiki. Nuvvu premani isthe adhi rettimpu chesi istha, koppani isthe adhi premaga marchi muddhuga tirigi istha, alaka choopisthe muddhu aadi naa vodilo padukopettukunta. Mari naatho paatu naa venta vasthava naatho yedu adugulu vesthava adhe...naa premanu angeekaristhava, so ninnu naa pellam/emey/oi/osey/ammulu..inka chaala vidhaluga prema ga piliche chanuvuni isthava mari...
+Prema ga rasthunna lekha naa oopirini icchina snehitha ku 
+Preetham.V 
+Taruvatha nuvvu edhi anukunte adhi.
+    </div>
+
+    <div class="buttons">
+      <button onclick="playLove1()">Yes 💘</button>
+      <button onclick="playLove2()">Yes Yes 💖</button>
+    </div>
+  </div>
+
+  <!-- Romantic songs -->
+  <audio id="loveSong1">
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3"/>
+  </audio>
+
+  <audio id="loveSong2">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3"/>
+  </audio>
+
+  <script>
+    // Floating hearts
+    const heartContainer = document.getElementById("hearts");
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }, 300);
+
+    // Music Functions
+    function playLove1() {
+      stopAll();
+      document.getElementById("loveSong1").play();
+      alert("💍 Ammulu...I Love You So Much Ammulu...lets start our roller coaster journey which never ends");
+    }
+
+    function playLove2() {
+      stopAll();
+      document.getElementById("loveSong2").play();
+      alert("🌹 You said YES YES! Let’s turn every moment into forever. 💑");
+    }
+
+    function stopAll() {
+      document.getElementById("loveSong1").pause();
+      document.getElementById("loveSong1").currentTime = 0;
+      document.getElementById("loveSong2").pause();
+      document.getElementById("loveSong2").currentTime = 0;
+    }
+  </script>
+</body>
+</html>
